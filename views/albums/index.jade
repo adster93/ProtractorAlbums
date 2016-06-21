@@ -1,6 +1,7 @@
 extends ../layout
 
 block content
+  h2 Hello #{user}
   h1 Albums
   a(href="/albums/new") New Album
   table
@@ -9,8 +10,11 @@ block content
       th(class="artist") Artist
       th(class="album") Album
     for album in albums
-      tr(class="albumRow")
-        td(id=album.genre)= album.genre
-        td(id=album.artist)= album.artist
-        td(id=album.album)
-          a(href="/albums/"+album.album)=album.album
+      if album
+        tr(class="albumRow")
+          td(id=album.genre)= album.genre
+          td(id=album.artist)= album.artist
+          td(id=album.album)= album.album
+            a(href="/albums/"+album.album)=album.album
+            img(src='images/favoriteStar.png' id="favorite")
+  a(href="/users/logout" id="logout") Logout

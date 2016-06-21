@@ -6,3 +6,7 @@ body {
 a {
   color: #00B7FF;
 }
+
+#favorite{
+  border-color: black 2px solid
+}

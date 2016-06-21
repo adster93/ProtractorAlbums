@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Sign-Up
+  form(action="/users" method="post")
+    label(for="username") Username:
+    input(type="text" id="username" name="username")
+    br
+    label(for="password") Password
+    input(type="password" id="password" name="password")
+    br
+    input(type="submit" id="submit" value="Create User")
+    a(href="/" id="cancel") Cancel

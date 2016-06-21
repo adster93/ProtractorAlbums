@@ -43,7 +43,7 @@ router.get('/:albumName/edit', function(req, res, next) {
 })
 router.delete('/:albumName', function(req, res, next) {
   albumCollection.findOne({album: req.params.albumName}, function(err, album){
-    res.render('./albums/show', {album: album})
+    res.redirect('/albums')
   })
 })
 
